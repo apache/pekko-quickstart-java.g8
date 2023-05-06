@@ -1,10 +1,10 @@
-name := "akka-quickstart-java"
+name := "pekko-quickstart-java"
 
 version := "1.0"
 
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.10"
 
-lazy val akkaVersion = "$akka_version$"
+lazy val pekkoVersion = "$pekko_version$"
 
 // Run in a separate JVM, to make sure sbt waits until all threads have
 // finished before returning.
@@ -12,9 +12,11 @@ lazy val akkaVersion = "$akka_version$"
 // sbt tasks, consider https://github.com/spray/sbt-revolver/
 fork := true
 
+resolvers += "Apache Nexus Snapshots".at("https://repository.apache.org/content/repositories/snapshots/")
+
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
-  "com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion,
+  "org.apache.pekko" %% "pekko-actor-typed" % pekkoVersion,
+  "org.apache.pekko" %% "pekko-actor-testkit-typed" % pekkoVersion,
   "ch.qos.logback" % "logback-classic" % "1.2.3",
   "junit" % "junit" % "4.13.1" % Test,
   "com.novocode" % "junit-interface" % "0.11" % Test)

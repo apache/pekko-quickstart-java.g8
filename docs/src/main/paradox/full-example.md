@@ -1,6 +1,6 @@
 ## Full example code
 
-Here below is the complete source code from the three classes, `Greeter`, `GreeterBot`, `GreeterMain`  and `AkkaQuickstart`, that creates the sample application:
+Here below is the complete source code from the three classes, `Greeter`, `GreeterBot`, `GreeterMain`  and `PekkoQuickstart`, that creates the sample application:
 
 ### Greeter.java
 
@@ -15,8 +15,8 @@ Here below is the complete source code from the three classes, `Greeter`, `Greet
 @@snip [GreeterMain.java]($g8src$/java/$package$/GreeterMain.java)
 
 
-### AkkaQuickstart.java
+### PekkoQuickstart.java
 
-@@snip [AkkaQuickstart.java]($g8src$/java/$package$/AkkaQuickstart.java)
+@@snip [PekkoQuickstart.java]($g8src$/java/$package$/PekkoQuickstart.java)
 
 As another best practice we should provide some test coverage.

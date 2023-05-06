@@ -1,13 +1,13 @@
 package $package$;
 
-import akka.actor.testkit.typed.javadsl.TestKitJunitResource;
-import akka.actor.testkit.typed.javadsl.TestProbe;
-import akka.actor.typed.ActorRef;
+import org.apache.pekko.actor.testkit.typed.javadsl.TestKitJunitResource;
+import org.apache.pekko.actor.testkit.typed.javadsl.TestProbe;
+import org.apache.pekko.actor.typed.ActorRef;
 import org.junit.ClassRule;
 import org.junit.Test;
 
 //#definition
-public class AkkaQuickstartTest {
+public class PekkoQuickstartTest {
 
     @ClassRule
     public static final TestKitJunitResource testKit = new TestKitJunitResource();

@@ -1,12 +1,12 @@
 package $package$;
 
-import akka.actor.typed.ActorSystem;
+import org.apache.pekko.actor.typed.ActorSystem;
 
 import java.io.IOException;
-public class AkkaQuickstart {
+public class PekkoQuickstart {
   public static void main(String[] args) {
     //#actor-system
-    final ActorSystem<GreeterMain.SayHello> greeterMain = ActorSystem.create(GreeterMain.create(), "helloakka");
+    final ActorSystem<GreeterMain.SayHello> greeterMain = ActorSystem.create(GreeterMain.create(), "hellopekko");
     //#actor-system
 
     //#main-send-messages

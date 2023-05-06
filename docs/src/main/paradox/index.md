@@ -1,24 +1,11 @@
-# Akka Actors Quickstart with Java
+# Apache Pekko Actors Quickstart with Java
  
-Akka is a toolkit and runtime for building highly concurrent, distributed, and fault-tolerant event-driven applications on the JVM. Akka can be used with both Java and Scala.
-This guide introduces Akka Actors by describing the Java version of the Hello World example. If you prefer to use Akka with Scala, switch to the [Akka Quickstart with Scala guide](https://developer.lightbend.com/guides/akka-quickstart-scala/). 
+Apache Pekko is a toolkit and runtime for building highly concurrent, distributed, and fault-tolerant event-driven applications on the JVM. Pekko can be used with both Java and Scala.
+This guide introduces Pekko Actors by describing the Java version of the Hello World example. If you prefer to use Pekko with Scala, switch to the Pekko Quickstart with Scala guide. 
 
-Actors are the unit of execution in Akka. The Actor model is an abstraction that makes it easier to write correct concurrent, parallel and distributed systems. The Hello World example illustrates Akka basics. Within 30 minutes, you should be able to download and run the example and use this guide to understand how the example is constructed. This will get your feet wet, and hopefully inspire you to dive deeper into the wonderful sea of Akka!
+Actors are the unit of execution in Pekko. The Actor model is an abstraction that makes it easier to write correct concurrent, parallel and distributed systems. The Hello World example illustrates Pekko basics. Within 30 minutes, you should be able to download and run the example and use this guide to understand how the example is constructed. This will get your feet wet, and hopefully inspire you to dive deeper into the wonderful sea of Pekko!
 
-After trying this example the comprehensive [Getting Started Guide](http://doc.akka.io/docs/akka/2.6/java/guide/introduction.html) is a good next step to continue learning more about Akka.
-
-The [Akka Platform Guide](https://developer.lightbend.com/docs/akka-platform-guide/) discusses more Akka concepts and features and gives an overview of Akka as a toolkit.
-
-## Downloading the example 
-
-The Hello World example for Java is a zipped project that includes a build files for Maven and Gradle. You can run it on Linux, MacOS, or Windows. The only prerequisite is Java 8 and an installation of [Maven](https://maven.apache.org) or [Gradle](https://gradle.org).
-
-Download and unzip the example:
-
-1. Download the [zip file](https://example.lightbend.com/v1/download/akka-quickstart-java?name=akka-quickstart-java). 
-1. Extract the zip file to a convenient location: 
-  - On Linux and OSX systems, open a terminal and use the command `unzip akka-quickstart-java.zip`.
-  - On Windows, use a tool such as File Explorer to extract the project. 
+After trying this example the comprehensive [Getting Started Guide](https://pekko.apache.org/docs/pekko/current/java/guide/introduction.html) is a good next step to continue learning more about Pekko.
 
 ## Running the example
 
@@ -40,7 +27,7 @@ Maven
 : ```
 Scanning for projects...
 [INFO]
-[INFO] ------------------------< hello-akka-java:app >-------------------------
+[INFO] ------------------------< hello-pekko-java:app >-------------------------
 [INFO] Building app 1.0
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
@@ -48,52 +35,52 @@ Scanning for projects...
 [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 [INFO]
 [INFO] --- exec-maven-plugin:1.6.0:exec (default-cli) @ app ---
-[2019-10-12 09:20:30,248] [INFO] [akka.event.slf4j.Slf4jLogger] [helloakka-akka.actor.default-dispatcher-3] [] -
+[2019-10-12 09:20:30,248] [INFO] [org.apache.pekko.event.slf4j.Slf4jLogger] [hellopekko-pekko.actor.default-dispatcher-3] [] -
 Slf4jLogger started
 SLF4J: A number (1) of logging calls during the initialization phase have been intercepted and are
 SLF4J: now being replayed. These are subject to the filtering rules of the underlying logging system.
-SLF4J: See also http://www.slf4j.org/codes.html#replay
+SLF4J: See also https://www.slf4j.org/codes.html#replay
 >>> Press ENTER to exit <<<
-[2019-10-12 09:20:30,288] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:20:30,290] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 1 for Charles
-[2019-10-12 09:20:30,291] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:20:30,291] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 2 for Charles
-[2019-10-12 09:20:30,291] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:20:30,291] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 3 for Charles
+[2019-10-12 09:20:30,288] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:20:30,290] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 1 for Charles
+[2019-10-12 09:20:30,291] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:20:30,291] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 2 for Charles
+[2019-10-12 09:20:30,291] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:20:30,291] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 3 for Charles
 ```
 
 Gradle
 : ```
 :run 
-[2019-10-12 09:47:16,399] [INFO] [akka.event.slf4j.Slf4jLogger] [helloakka-akka.actor.default-dispatcher-3] [] -
+[2019-10-12 09:47:16,399] [INFO] [org.apache.pekko.event.slf4j.Slf4jLogger] [hellopekko-pekko.actor.default-dispatcher-3] [] -
 Slf4jLogger started
 SLF4J: A number (1) of logging calls during the initialization phase have been intercepted and are
 SLF4J: now being replayed. These are subject to the filtering rules of the underlying logging system.
-SLF4J: See also http://www.slf4j.org/codes.html#replay
+SLF4J: See also https://www.slf4j.org/codes.html#replay
 >>> Press ENTER to exit <<<
-[2019-10-12 09:47:16,437] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:47:16,439] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 1 for Charles
-[2019-10-12 09:47:16,440] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:47:16,440] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 2 for Charles
-[2019-10-12 09:47:16,440] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:47:16,440] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 3 for Charles
+[2019-10-12 09:47:16,437] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:47:16,439] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 1 for Charles
+[2019-10-12 09:47:16,440] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:47:16,440] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 2 for Charles
+[2019-10-12 09:47:16,440] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:47:16,440] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 3 for Charles
 <=========----> 75% EXECUTING [27s]
 > :run
 ```
    
-Congratulations, you just ran your first Akka app. Now take a look at what happened under the covers. 
+Congratulations, you just ran your first Pekko app. Now take a look at what happened under the covers. 
 
 ## What Hello World does
 
@@ -105,7 +92,7 @@ The example consists of three actors:
 
 ## Benefits of using the Actor Model
 
-The following characteristics of Akka allow you to solve difficult concurrency and scalability challenges in an intuitive way: 
+The following characteristics of Pekko allow you to solve difficult concurrency and scalability challenges in an intuitive way: 
 
 * Event-driven model &#8212; Actors perform work in response to messages. Communication between Actors is asynchronous, allowing Actors to send messages and continue their own work without blocking to wait for a reply.
 * Strong isolation principles &#8212; Unlike regular objects in Java, an Actor does not have a public API in terms of methods that you can invoke. Instead, its public API is defined through messages that the actor handles. This prevents any sharing of state between Actors; the only way to observe another actor's state is by sending it a message asking for it.

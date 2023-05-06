@@ -9,13 +9,13 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.typesafe.akka:akka-actor-typed_2.13:$akka_version$'
+  implementation 'org.apache.pekko:pekko-actor-typed_2.13:$pekko_version$'
   implementation 'ch.qos.logback:logback-classic:1.2.3'
-  testImplementation 'com.typesafe.akka:akka-actor-testkit-typed_2.13:$akka_version$'
+  testImplementation 'org.apache.pekko:pekko-actor-testkit-typed_2.13:$pekko_version$'
   testImplementation 'junit:junit:4.13.1'
 }
 
-mainClassName = "$package$.AkkaQuickstart"
+mainClassName = "$package$.PekkoQuickstart"
 
 run {
   standardInput = System.in

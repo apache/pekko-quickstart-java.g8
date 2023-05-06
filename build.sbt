@@ -1,9 +1,9 @@
 // This build is for this Giter8 template.
 // To test the template run `g8` or `g8Test` from the sbt session.
-// See http://www.foundweekends.org/giter8/testing.html#Using+the+Giter8Plugin for more details.
+// See https://www.foundweekends.org/giter8/testing.html#Using+the+Giter8Plugin for more details.
 lazy val root = (project in file("."))
   .settings(
-    name := "akka-java-seed",
+    name := "pekko-java-seed",
     Test / test := {
       val _ = (Test / g8Test).toTask("").value
     },

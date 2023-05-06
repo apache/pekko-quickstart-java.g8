@@ -13,7 +13,7 @@ Maven
 Gradle
 :   @@snip [pom.xml]($g8root$/build.gradle)
 
-Note how some dependencies have a suffix `_2.13` in the artifact name. This suffix is the scala version this artifact was compiled for. All artifacts must be compiled for the same scala version so you can't depend on `akka-actors_2.13` and `akka-testkit_2.12` in a single project since they require different scala version.
+Note how some dependencies have a suffix `_2.13` in the artifact name. This suffix is the scala version this artifact was compiled for. All artifacts must be compiled for the same scala version so you can't depend on `pekko-actors_2.13` and `pekko-testkit_2.12` in a single project since they require different scala version.
 
 ### Running the project
 
@@ -38,7 +38,7 @@ Maven
 ```
 canning for projects...
 [INFO]
-[INFO] ------------------------< hello-akka-java:app >-------------------------
+[INFO] ------------------------< hello-pekko-java:app >-------------------------
 [INFO] Building app 1.0
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
@@ -46,24 +46,24 @@ canning for projects...
 [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 [INFO]
 [INFO] --- exec-maven-plugin:1.6.0:exec (default-cli) @ app ---
-[2019-10-12 09:20:30,248] [INFO] [akka.event.slf4j.Slf4jLogger] [helloakka-akka.actor.default-dispatcher-3] [] -
+[2019-10-12 09:20:30,248] [INFO] [org.apache.pekko.event.slf4j.Slf4jLogger] [hellopekko-pekko.actor.default-dispatcher-3] [] -
 Slf4jLogger started
 SLF4J: A number (1) of logging calls during the initialization phase have been intercepted and are
 SLF4J: now being replayed. These are subject to the filtering rules of the underlying logging system.
-SLF4J: See also http://www.slf4j.org/codes.html#replay
+SLF4J: See also https://www.slf4j.org/codes.html#replay
 >>> Press ENTER to exit <<<
-[2019-10-12 09:20:30,288] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:20:30,290] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 1 for Charles
-[2019-10-12 09:20:30,291] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:20:30,291] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 2 for Charles
-[2019-10-12 09:20:30,291] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:20:30,291] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 3 for Charles
+[2019-10-12 09:20:30,288] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:20:30,290] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 1 for Charles
+[2019-10-12 09:20:30,291] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:20:30,291] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 2 for Charles
+[2019-10-12 09:20:30,291] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:20:30,291] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 3 for Charles
 
 ```
 
@@ -71,24 +71,24 @@ Gradle
 : 
 ```
 :run
-[2019-10-12 09:47:16,399] [INFO] [akka.event.slf4j.Slf4jLogger] [helloakka-akka.actor.default-dispatcher-3] [] -
+[2019-10-12 09:47:16,399] [INFO] [org.apache.pekko.event.slf4j.Slf4jLogger] [hellopekko-pekko.actor.default-dispatcher-3] [] -
 Slf4jLogger started
 SLF4J: A number (1) of logging calls during the initialization phase have been intercepted and are
 SLF4J: now being replayed. These are subject to the filtering rules of the underlying logging system.
-SLF4J: See also http://www.slf4j.org/codes.html#replay
+SLF4J: See also https://www.slf4j.org/codes.html#replay
 >>> Press ENTER to exit <<<
-[2019-10-12 09:47:16,437] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:47:16,439] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 1 for Charles
-[2019-10-12 09:47:16,440] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:47:16,440] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 2 for Charles
-[2019-10-12 09:47:16,440] [INFO] [com.lightbend.akka.sample.Greeter] [helloakka-akka.actor.default-dispatcher-6]
-[akka://helloakka/user/greeter] - Hello Charles!
-[2019-10-12 09:47:16,440] [INFO] [com.lightbend.akka.sample.GreeterBot] [helloakka-akka.actor.default-dispatcher-3]
-[akka://helloakka/user/Charles] - Greeting 3 for Charles
+[2019-10-12 09:47:16,437] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:47:16,439] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 1 for Charles
+[2019-10-12 09:47:16,440] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:47:16,440] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 2 for Charles
+[2019-10-12 09:47:16,440] [INFO] [com.example.Greeter] [hellopekko-pekko.actor.default-dispatcher-6]
+[pekko://hellopekko/user/greeter] - Hello Charles!
+[2019-10-12 09:47:16,440] [INFO] [com.example.GreeterBot] [hellopekko-pekko.actor.default-dispatcher-3]
+[pekko://hellopekko/user/Charles] - Greeting 3 for Charles
 <=========----> 75% EXECUTING [27s]
 > :run
 ```
@@ -118,4 +118,4 @@ $ gradle test
 
 If you use IntelliJ, try integrating the sample project with @ref:[IntelliJ IDEA](intellij-idea.md).
 
-To continue learning more about Akka and Actor Systems, look at the [Getting Started Guide](http://doc.akka.io/docs/akka/current/java/guide/introduction.html) next. Happy hakking!
+To continue learning more about Pekko and Actor Systems, look at the [Getting Started Guide](https://pekko.apache.org/docs/pekko/current/java/guide/introduction.html) next. Happy hakking!
