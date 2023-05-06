@@ -3,11 +3,13 @@
 Apache Pekko is a toolkit and runtime for building highly concurrent, distributed, and fault-tolerant event-driven applications on the JVM. Pekko can be used with both Java and Scala.
 This guide introduces Pekko Actors by describing the Java version of the Hello World example. If you prefer to use Pekko with Scala, switch to the Pekko Quickstart with Scala guide. 
 
-Actors are the unit of execution in Pekko. The Actor model is an abstraction that makes it easier to write correct concurrent, parallel and distributed systems. The Hello World example illustrates Pekko basics. Within 30 minutes, you should be able to download and run the example and use this guide to understand how the example is constructed. This will get your feet wet, and hopefully inspire you to dive deeper into the wonderful sea of Pekko!
+Actors are the unit of execution in Pekko. The Actor model is an abstraction that makes it easier to write correct concurrent, parallel and distributed systems. The Hello World example illustrates Pekko basics. Within 30 minutes, you should be able to download and run the example and use this guide to understand how the example is constructed. This will get your feet wet, and hopefully inspire you to dive deeper into the wonderful world of Pekko!
 
 After trying this example the comprehensive [Getting Started Guide](https://pekko.apache.org/docs/pekko/current/java/guide/introduction.html) is a good next step to continue learning more about Pekko.
 
 ## Running the example
+
+Create a new project using `sbt new apache/incubator-pekko-quickstart-java.g8`.
 
 Make sure that you have installed the build tool of your choice and thereafter open a Terminal window and, from inside the project directory, type the following to run Hello World:
 
