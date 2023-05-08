@@ -7,6 +7,15 @@ Actors are the unit of execution in Pekko. The Actor model is an abstraction tha
 
 After trying this example the comprehensive [Getting Started Guide](https://pekko.apache.org/docs/pekko/current/java/guide/introduction.html) is a good next step to continue learning more about Pekko.
 
+## Install
+
+The easiest way to setup this project is use [sbt](https://www.scala-sbt.org).
+
+Open a Terminal window and run the following command. It will create a subdirectory with the example code in it.
+```
+sbt new apache/incubator-pekko-quickstart-java.g8
+```
+
 ## Running the example
 
 Create a new project using `sbt new apache/incubator-pekko-quickstart-java.g8`.
