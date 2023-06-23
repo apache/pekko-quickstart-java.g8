@@ -2,7 +2,7 @@ name := "pekko-quickstart-java"
 
 version := "1.0"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.11"
 
 lazy val pekkoVersion = "$pekko_version$"
 
