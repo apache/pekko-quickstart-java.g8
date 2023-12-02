@@ -2,7 +2,7 @@ name := "pekko-quickstart-java"
 
 version := "1.0"
 
-scalaVersion := "2.13.11"
+scalaVersion := "2.13.12"
 
 lazy val pekkoVersion = "$pekko_version$"
 
@@ -15,6 +15,6 @@ fork := true
 libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor-typed" % pekkoVersion,
   "org.apache.pekko" %% "pekko-actor-testkit-typed" % pekkoVersion,
-  "ch.qos.logback" % "logback-classic" % "1.2.3",
-  "junit" % "junit" % "4.13.1" % Test,
+  "ch.qos.logback" % "logback-classic" % "1.2.13",
+  "junit" % "junit" % "4.13.2" % Test,
   "com.novocode" % "junit-interface" % "0.11" % Test)
