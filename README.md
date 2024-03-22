@@ -14,7 +14,7 @@ Prerequisites:
 
 Open a console and run the following command to apply this template:
  ```
-sbt new apache/incubator-pekko-quickstart-java.g8
+sbt new apache/pekko-quickstart-java.g8
  ```
 
 This template will prompt for the name of the project. Press `Enter` if the default values suit you.
