@@ -13,12 +13,12 @@ The easiest way to setup this project is use [sbt](https://www.scala-sbt.org).
 
 Open a Terminal window and run the following command. It will create a subdirectory with the example code in it.
 ```
-sbt new apache/incubator-pekko-quickstart-java.g8
+sbt new apache/pekko-quickstart-java.g8
 ```
 
 ## Running the example
 
-Create a new project using `sbt new apache/incubator-pekko-quickstart-java.g8`.
+Create a new project using `sbt new apache/pekko-quickstart-java.g8`.
 
 Make sure that you have installed the build tool of your choice and thereafter open a Terminal window and, from inside the project directory, type the following to run Hello World:
 
