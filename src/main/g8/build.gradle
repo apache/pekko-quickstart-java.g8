@@ -12,10 +12,16 @@ dependencies {
   implementation 'org.apache.pekko:pekko-actor-typed_2.13:$pekko_version$'
   implementation 'ch.qos.logback:logback-classic:1.3.14'
   testImplementation 'org.apache.pekko:pekko-actor-testkit-typed_2.13:$pekko_version$'
-  testImplementation 'junit:junit:4.13.2'
+  testImplementation platform('org.junit:junit-bom:6.0.3')
+  testImplementation 'org.junit.jupiter:junit-jupiter'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 mainClassName = "$package$.PekkoQuickstart"
+
+test {
+  useJUnitPlatform()
+}
 
 run {
   standardInput = System.in

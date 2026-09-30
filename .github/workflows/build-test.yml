@@ -25,6 +25,17 @@ jobs:
       - name: Cache Coursier cache
         uses: coursier/cache-action@95e5b1029b6b86e7bac033ee44a0697d8a527d2d # v8.1.1
 
-      - name: sbt test
-        # This runs the template with the default parameters, and runs test within the templated app.
-        run: sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test docs/paradox
+      - name: Render template and build docs
+        # This renders the template with the default parameters into target/g8.
+        run: sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M g8 docs/paradox
+
+      - name: sbt test in templated app
+        # Run directly rather than via g8Test: scripted skips the test because the
+        # templated app uses sbt 2 while this build (paradox) is still on sbt 1.
+        # testFull, because sbt 2's `test` is testQuick and may skip cached passes.
+        working-directory: target/g8
+        run: sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M testFull
+
+      - name: mvn test in templated app
+        working-directory: target/g8
+        run: mvn -B test
