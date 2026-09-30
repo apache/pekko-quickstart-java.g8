@@ -17,4 +17,4 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor-testkit-typed" % pekkoVersion,
   "ch.qos.logback" % "logback-classic" % "1.3.15",
   "junit" % "junit" % "4.13.2" % Test,
-  "com.github.sbt" % "junit-interface" % "0.13.2" % Test)
+  "com.github.sbt" % "junit-interface" % "0.13.3" % Test)
