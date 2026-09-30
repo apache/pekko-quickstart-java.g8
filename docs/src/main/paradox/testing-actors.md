@@ -1,6 +1,6 @@
 ## Testing Actors
  
-The tests in the Hello World example illustrates use of the [JUnit](https://www.junit.org/) framework. The test coverage is not complete. 
+The tests in the Hello World example illustrates use of the [JUnit Jupiter](https://junit.org/) framework. The test coverage is not complete. 
 It shows how to test actor code and provides some basic concepts. 
 
 @@snip [PekkoQuickstartTest.java]($g8srctest$/java/$package$/PekkoQuickstartTest.java)
@@ -9,8 +9,9 @@ It shows how to test actor code and provides some basic concepts.
 
 @@snip [PekkoQuickstartTest.java]($g8srctest$/java/$package$/PekkoQuickstartTest.java) { #definition }
 
-Support for JUnit is included by using the `TestKitJunitResource` JUnit rule. This automatically creates and cleans
-up an `ActorTestKit`. To see how to use the testkit directly see the [full documentation](https://pekko.apache.org/docs/pekko/current/typed/testing-async.html).
+Support for JUnit Jupiter is included by using the `TestKitJUnit5Extension` extension. The `ActorTestKit` field annotated
+with `@JUnit5TestKit` is shut down by the extension after all the tests in the class have run. `@TestInstance(PER_CLASS)`
+ensures that a single `ActorTestKit` is shared by all the tests in the class. To see how to use the testkit directly see the [full documentation](https://pekko.apache.org/docs/pekko/current/typed/testing-async.html).
 
 ### Test methods
 
