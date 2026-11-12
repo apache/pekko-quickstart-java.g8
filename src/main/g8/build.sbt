@@ -18,3 +18,10 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.6.6",
   "junit" % "junit" % "4.13.2" % Test,
   "com.github.sbt" % "junit-interface" % "0.13.3" % Test)
+
+// Match Apache Pekko formatting; preserve Java import order.
+ThisBuild / javafmtFormatterCompatibleJavaVersion := 17
+ThisBuild / javafmtSortImports := false
+
+addCommandAlias("applyCodeStyle", "scalafmtAll; scalafmtSbt; javafmtAll")
+addCommandAlias("checkCodeStyle", "scalafmtCheckAll; scalafmtSbtCheck; javafmtCheckAll")

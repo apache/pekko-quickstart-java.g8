@@ -28,14 +28,13 @@ public class Greeter extends AbstractBehavior<Greeter.Greet> {
       this.from = from;
     }
 
-// #greeter
+    // #greeter
     @Override
     public boolean equals(Object o) {
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
       Greeted greeted = (Greeted) o;
-      return Objects.equals(whom, greeted.whom) &&
-              Objects.equals(from, greeted.from);
+      return Objects.equals(whom, greeted.whom) && Objects.equals(from, greeted.from);
     }
 
     @Override
@@ -45,12 +44,9 @@ public class Greeter extends AbstractBehavior<Greeter.Greet> {
 
     @Override
     public String toString() {
-      return "Greeted{" +
-              "whom='" + whom + '\'' +
-              ", from=" + from +
-              '}';
+      return "Greeted{" + "whom='" + whom + '\'' + ", from=" + from + '}';
     }
-// #greeter
+    // #greeter
   }
 
   public static Behavior<Greet> create() {
@@ -68,11 +64,10 @@ public class Greeter extends AbstractBehavior<Greeter.Greet> {
 
   private Behavior<Greet> onGreet(Greet command) {
     getContext().getLog().info("Hello {}!", command.whom);
-    //#greeter-send-message
+    // #greeter-send-message
     command.replyTo.tell(new Greeted(command.whom, getContext().getSelf()));
-    //#greeter-send-message
+    // #greeter-send-message
     return this;
   }
 }
 // #greeter
-
