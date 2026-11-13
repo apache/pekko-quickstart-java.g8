@@ -3,15 +3,17 @@ package $package$;
 import org.apache.pekko.actor.typed.ActorSystem;
 
 import java.io.IOException;
+
 public class PekkoQuickstart {
   public static void main(String[] args) {
-    //#actor-system
-    final ActorSystem<GreeterMain.SayHello> greeterMain = ActorSystem.create(GreeterMain.create(), "hellopekko");
-    //#actor-system
+    // #actor-system
+    final ActorSystem<GreeterMain.SayHello> greeterMain =
+        ActorSystem.create(GreeterMain.create(), "hellopekko");
+    // #actor-system
 
-    //#main-send-messages
+    // #main-send-messages
     greeterMain.tell(new GreeterMain.SayHello("Charles"));
-    //#main-send-messages
+    // #main-send-messages
 
     try {
       System.out.println(">>> Press ENTER to exit <<<");
