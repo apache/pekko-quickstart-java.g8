@@ -15,7 +15,7 @@ fork := true
 libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor-typed" % pekkoVersion,
   "org.apache.pekko" %% "pekko-actor-testkit-typed" % pekkoVersion,
-  "ch.qos.logback" % "logback-classic" % "1.6.6",
+  "ch.qos.logback" % "logback-classic" % "1.6.7",
   "junit" % "junit" % "4.13.2" % Test,
   "com.github.sbt" % "junit-interface" % "0.13.3" % Test)
 
